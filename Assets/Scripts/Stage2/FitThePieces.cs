@@ -7,6 +7,5 @@ public class FitThePieces : MonoBehaviour
     [SerializeField] private Transform[] pos;
     private void Start()
     {
-        pieces.
     }
 }
