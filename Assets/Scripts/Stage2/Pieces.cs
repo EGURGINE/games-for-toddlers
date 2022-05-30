@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class Pieces : MonoBehaviour
 {
     [SerializeField] private GameObject trueBg;
@@ -14,7 +15,6 @@ public class Pieces : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-        Debug.Log(Input.mousePosition);
         transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,10));
     }
     private void OnMouseUp()
@@ -22,6 +22,7 @@ public class Pieces : MonoBehaviour
         if (isTrue)
         {
             transform.position = trueBg.transform.position;
+            this.GetComponent<BoxCollider2D>().enabled = false;
         }
         else transform.position = startPos.position;
     }
