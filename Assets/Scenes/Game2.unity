@@ -223,7 +223,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -80.00001, y: -80.000015}
+  m_AnchoredPosition: {x: -80, y: -80.000015}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &90898150
@@ -271,8 +271,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1155123625}
-        m_TargetAssemblyTypeName: BtnManager, Assembly-CSharp
-        m_MethodName: ExitBtn
+        m_TargetAssemblyTypeName: StageManager, Assembly-CSharp
+        m_MethodName: MainBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1258,9 +1258,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1155123622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb67b8029396f4b458eea0c569bc3b63, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e215c32be1fa884eb082b770a4410ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pc: {fileID: 5844221740780450232, guid: f688ff8370651de4a9e7fc837d12d260, type: 3}
 --- !u!1 &1156769547
 GameObject:
   m_ObjectHideFlags: 0
