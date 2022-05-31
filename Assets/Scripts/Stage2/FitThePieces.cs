@@ -20,7 +20,7 @@ public class FitThePieces : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             choice[i].transform.position = new Vector2(pos[i].position.x, pos[i].position.y);
-
+            choice[i].GetComponent<Pieces>().startPos = pos[i];
         }
     }
 

@@ -7,12 +7,7 @@ public class Pieces : MonoBehaviour
 {
     [SerializeField] private GameObject trueBg;
     public bool isTrue = false;
-    private Transform startPos;
-
-    private void Start()
-    {
-      startPos = transform;
-    }
+    public Transform startPos;
     private void OnMouseDrag()
     {
         transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,10));

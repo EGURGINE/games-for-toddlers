@@ -27,7 +27,7 @@ public class FitSize : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             sizeNum[i].transform.position = new Vector2(pos[i].position.x,pos[i].position.y);
-
+            sizeNum[i].GetComponent<ChoiceSize>().startPos = pos[i];
         }
     }
 }

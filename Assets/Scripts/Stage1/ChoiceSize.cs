@@ -6,12 +6,8 @@ public class ChoiceSize : MonoBehaviour
 {
     public bool isTrue = false;
     private Transform truePos;
-    private Transform startPos;
+    public Transform startPos;
 
-    private void Start()
-    {
-        startPos = transform;
-    }
     private void OnMouseDrag()
     {
         transform.position = Camera.main.ScreenToWorldPoint(
@@ -24,7 +20,6 @@ public class ChoiceSize : MonoBehaviour
         {
             transform.position = truePos.position;
             this.GetComponent<BoxCollider2D>().enabled = false;
-
         }
         else transform.position = startPos.position;
     }
