@@ -6,6 +6,7 @@ public class FitTheSilhouette : MonoBehaviour
 {
     [SerializeField] private GameObject[] sizeNum;
     [SerializeField] private Transform[] pos;
+    public bool isTouch;
     private void Start()
     {
         for (int i = 0; i < 4; i++)

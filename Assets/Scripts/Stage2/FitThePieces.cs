@@ -5,6 +5,8 @@ public class FitThePieces : MonoBehaviour
 {
     [SerializeField] private GameObject[] choice;
     [SerializeField] private Transform[] pos;
+    [SerializeField] private int stageNum;
+    private int piecesClear = 0;
     private void Start()
     {
         for (int i = 0; i < 4; i++)
@@ -23,5 +25,12 @@ public class FitThePieces : MonoBehaviour
             choice[i].GetComponent<Pieces>().startPos = pos[i];
         }
     }
-
+    public void IsClear(int num)
+    {
+        piecesClear += num;
+        if (piecesClear==4)
+        {
+            GameObject.Find("PlayManager").GetComponent<PlayManager>().Stage(stageNum);
+        }
+    }
 }

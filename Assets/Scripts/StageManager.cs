@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class StageManager : MonoBehaviour
 {
+    [SerializeField] private Slider exitSlider;
     [SerializeField] private GameObject pc;
-    public void MainBtn()
+    public void MainBtn(float value)
     {
-        SceneManager.LoadScene("Main");
+        if (value == 0) SceneManager.LoadScene("Main");
+        else exitSlider.value = 1;
     }
 
     private void Update()
@@ -26,16 +29,16 @@ public class StageManager : MonoBehaviour
     }
     public void Game_3()
     {
-        Debug.Log("game 3");
+        SceneManager.LoadScene("Game3");
     }
     public void Game_4()
     {
         if (PlayerPrefs.GetInt("MaxStageNum") < 4) return;
-        Debug.Log("game 4");
+        SceneManager.LoadScene("Game4");
     }
     public void Game_5()
     {
         if (PlayerPrefs.GetInt("MaxStageNum") < 5) return;
-        Debug.Log("game 5");
+        SceneManager.LoadScene("Game5");
     }
 }

@@ -18,6 +18,7 @@ public class Pieces : MonoBehaviour
         {
             transform.position = trueBg.transform.position;
             this.GetComponent<BoxCollider2D>().enabled = false;
+            GameObject.Find("StageManager").GetComponent<FitThePieces>().IsClear(1);
         }
         else transform.position = startPos.position;
     }

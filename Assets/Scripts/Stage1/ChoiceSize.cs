@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class ChoiceSize : MonoBehaviour
 {
+    [SerializeField] private int stageNum;
     public bool isTrue = false;
     private Transform truePos;
     public Transform startPos;
@@ -19,9 +21,10 @@ public class ChoiceSize : MonoBehaviour
         if (isTrue)
         {
             transform.position = truePos.position;
-            this.GetComponent<BoxCollider2D>().enabled = false;
+            GameObject.Find("PlayManager").GetComponent<PlayManager>().Stage(stageNum);
         }
-        else transform.position = startPos.position;
+        else transform.DORotate(new Vector3(0, 0, 15), 0.3f).SetLoops(4, LoopType.Yoyo).OnComplete(() =>
+             transform.position = startPos.position);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
