@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class FitSize : MonoBehaviour
 {
     [SerializeField] private GameObject[] choice;
@@ -29,5 +29,16 @@ public class FitSize : MonoBehaviour
             sizeNum[i].transform.position = new Vector2(pos[i].position.x,pos[i].position.y);
             sizeNum[i].GetComponent<ChoiceSize>().startPos = pos[i];
         }
+    }
+    public void ClearDot(int num)
+    {
+        for (int i = 0; i < choice.Length; i++)
+        {
+            choice[i].transform.DOLocalMoveY(2, 0.3f).SetEase(Ease.InSine).SetLoops(2, LoopType.Yoyo);
+            choice[i].transform.DORotate(new Vector3(0, 0, 360), 0.2f, RotateMode.FastBeyond360);
+
+        }
+        print(num);
+        GameObject.Find("StageManager").GetComponent<PlayManager>().Stage(num);
     }
 }

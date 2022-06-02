@@ -21,7 +21,7 @@ public class ChoiceSize : MonoBehaviour
         if (isTrue)
         {
             transform.position = truePos.position;
-            GameObject.Find("PlayManager").GetComponent<PlayManager>().Stage(stageNum);
+            GameObject.Find("StageManager").GetComponent<FitSize>().ClearDot(stageNum);
         }
         else transform.DORotate(new Vector3(0, 0, 15), 0.3f).SetLoops(4, LoopType.Yoyo).OnComplete(() =>
              transform.position = startPos.position);
