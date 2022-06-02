@@ -7,9 +7,10 @@ public class FitSize : MonoBehaviour
     [SerializeField] private GameObject[] choice;
     [SerializeField] private GameObject[] sizeNum;
     [SerializeField] private Transform[] pos;
+    private int ran;
     private void Start()
     {
-        int ran = Random.Range(0, choice.Length);
+        ran = Random.Range(0, choice.Length);
         choice[ran].GetComponent<SpriteRenderer>().enabled = false;
         choice[ran].AddComponent<BoxCollider2D>().isTrigger = true;
         choice[ran].tag = "True";
@@ -26,19 +27,36 @@ public class FitSize : MonoBehaviour
         }
         for (int i = 0; i < 4; i++)
         {
-            sizeNum[i].transform.position = new Vector2(pos[i].position.x,pos[i].position.y);
+            sizeNum[i].transform.position = new Vector2(pos[i].position.x,pos[i].position.y-8);
             sizeNum[i].GetComponent<ChoiceSize>().startPos = pos[i];
         }
+
+        StartDot();
     }
-    public void ClearDot(int num)
+
+    private void StartDot()
     {
         for (int i = 0; i < choice.Length; i++)
         {
             choice[i].transform.DOLocalMoveY(2, 0.3f).SetEase(Ease.InSine).SetLoops(2, LoopType.Yoyo);
             choice[i].transform.DORotate(new Vector3(0, 0, 360), 0.2f, RotateMode.FastBeyond360);
 
+            sizeNum[i].transform.DOLocalMoveY(pos[i].transform.position.y, 0.3f).SetEase(Ease.InSine);
         }
-        print(num);
-        GameObject.Find("StageManager").GetComponent<PlayManager>().Stage(num);
+    }
+    public IEnumerator ClearDot(int num)
+    {
+        choice[ran].GetComponent<SpriteRenderer>().enabled = true;
+
+        for (int i = 0; i < choice.Length; i++)
+        {
+            choice[i].transform.DOLocalMoveY(2, 0.3f).SetEase(Ease.InSine).SetLoops(2, LoopType.Yoyo);
+            choice[i].transform.DORotate(new Vector3(0, 0, 360), 0.2f, RotateMode.FastBeyond360);
+
+            sizeNum[i].transform.DOLocalMoveY(-8, 0.3f).SetEase(Ease.InSine);
+        }
+        
+        yield return new WaitForSeconds(0.6f);
+        GameObject.Find("PlayManager").GetComponent<PlayManager>().Stage(num);
     }
 }
