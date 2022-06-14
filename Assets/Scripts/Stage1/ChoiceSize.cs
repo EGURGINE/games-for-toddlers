@@ -7,6 +7,7 @@ public class ChoiceSize : MonoBehaviour
 {
     [SerializeField] private int stageNum;
     public bool isTrue = false;
+    private bool isNot = false;
     private Transform truePos;
     public Transform startPos;
 
@@ -18,28 +19,37 @@ public class ChoiceSize : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (isTrue)
+        if (isTrue && isNot)
         {
             transform.position = truePos.position;
-            StartCoroutine( GameObject.Find("StageManager").GetComponent<FitSize>().ClearDot(stageNum));
-            this.GetComponent<SpriteRenderer>().enabled=false;
+            StartCoroutine(GameObject.Find("StageManager").GetComponent<FitSize>().ClearDot(stageNum));
+            this.GetComponent<SpriteRenderer>().enabled = false;
         }
-        else transform.DORotate(new Vector3(0, 0, 15), 0.3f).SetLoops(4, LoopType.Yoyo).OnComplete(() =>
-             transform.position = startPos.position);
+        else if (!isTrue && isNot) transform.DORotate(new Vector3(0, 0, 15), 0.3f).SetLoops(4, LoopType.Yoyo).OnComplete(() =>
+              transform.position = startPos.position);
+        else transform.position = startPos.position;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (this.tag == "True" && collision.CompareTag("True"))
+        if (collision.CompareTag("True"))
         {
-            isTrue = true;
-            truePos = collision.gameObject.transform;
+            isNot = true;
+            if (this.tag == "True")
+            {
+                isTrue = true;
+                truePos = collision.gameObject.transform;
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (this.tag == "True" && collision.CompareTag("True"))
+        if (collision.CompareTag("True"))
         {
-            isTrue = false;
+            isNot = false;
+            if (this.tag == "True")
+            {
+                isTrue = false;
+            }
         }
     }
 }
