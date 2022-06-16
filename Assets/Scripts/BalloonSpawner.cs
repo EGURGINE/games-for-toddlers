@@ -14,6 +14,7 @@ public class BalloonSpawner : MonoBehaviour
         if (num==10)
         {
             HomeBtn.GetComponent<RectTransform>().DOAnchorPos( Vector2.zero,1f).SetEase(Ease.InBack);
+            HomeBtn.transform.DOScale(new Vector3(2,2,2),1f).SetEase(Ease.InBack);
         }
     }
     public IEnumerator Spawn()
