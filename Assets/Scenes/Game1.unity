@@ -287,6 +287,7 @@ MonoBehaviour:
   stageNum: 5
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &126232917
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -567,6 +568,7 @@ MonoBehaviour:
   stageNum: 3
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &204522584
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1561,6 +1563,7 @@ MonoBehaviour:
   stageNum: 2
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &454817789
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1794,6 +1797,7 @@ MonoBehaviour:
   stageNum: 1
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!61 &537292118
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2035,6 +2039,7 @@ MonoBehaviour:
   stageNum: 2
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &657029146
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2216,6 +2221,7 @@ MonoBehaviour:
   stageNum: 4
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &725109343
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3192,6 +3198,7 @@ MonoBehaviour:
   stageNum: 1
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!61 &932167250
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3545,6 +3552,7 @@ MonoBehaviour:
   stageNum: 5
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &1040058428
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3763,6 +3771,7 @@ MonoBehaviour:
   stageNum: 1
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!61 &1062603578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4042,6 +4051,7 @@ MonoBehaviour:
   stageNum: 3
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &1105563224
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5545,6 +5555,7 @@ MonoBehaviour:
   stageNum: 5
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &1575920327
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5692,6 +5703,7 @@ MonoBehaviour:
   stageNum: 4
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &1575975474
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6184,6 +6196,7 @@ MonoBehaviour:
   stageNum: 3
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &1682112870
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6717,6 +6730,7 @@ MonoBehaviour:
   stageNum: 1
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!61 &1785080517
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6860,6 +6874,7 @@ MonoBehaviour:
   stageNum: 2
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &1785632029
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7007,6 +7022,7 @@ MonoBehaviour:
   stageNum: 4
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &1789267695
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7362,6 +7378,7 @@ MonoBehaviour:
   stageNum: 4
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &1829172068
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7806,6 +7823,7 @@ MonoBehaviour:
   stageNum: 2
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &1899474745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8055,6 +8073,7 @@ MonoBehaviour:
   stageNum: 5
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &1980595833
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8412,6 +8431,7 @@ MonoBehaviour:
   stageNum: 3
   isTrue: 0
   startPos: {fileID: 0}
+  clearPc: {fileID: 6178228884184471398, guid: bed46d58b9feced4ea297231f2532c44, type: 3}
 --- !u!212 &2035160164
 SpriteRenderer:
   m_ObjectHideFlags: 0

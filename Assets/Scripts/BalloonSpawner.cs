@@ -4,8 +4,8 @@ using UnityEngine;
 using DG.Tweening;
 public class BalloonSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject HomeBtn;
-    [SerializeField] GameObject Balloon;
+    [SerializeField] private GameObject HomeBtn;
+    [SerializeField] private GameObject Balloon;
     
     int num;
     public void NotBalloon(int _num)

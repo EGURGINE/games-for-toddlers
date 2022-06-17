@@ -10,7 +10,7 @@ public class ChoiceSize : MonoBehaviour
     private bool isNot = false;
     private Transform truePos;
     public Transform startPos;
-
+    [SerializeField] private ParticleSystem clearPc;
     private void OnMouseDrag()
     {
         transform.position = Camera.main.ScreenToWorldPoint(
@@ -22,8 +22,13 @@ public class ChoiceSize : MonoBehaviour
         if (isTrue && isNot)
         {
             transform.position = truePos.position;
-            StartCoroutine(GameObject.Find("StageManager").GetComponent<FitSize>().ClearDot(stageNum));
-            this.GetComponent<SpriteRenderer>().enabled = false;
+            Instantiate(clearPc).transform.position = transform.position;
+            transform.DOScale(new Vector3(transform.localScale.x + 0.1f, transform.localScale.y + 0.1f, 1), 0.5f).SetLoops(2, LoopType.Yoyo).OnComplete(() =>
+            {
+                StartCoroutine(GameObject.Find("StageManager").GetComponent<FitSize>().ClearDot(stageNum));
+                this.GetComponent<SpriteRenderer>().enabled = false;
+            });
+
         }
         else if (!isTrue && isNot) transform.DORotate(new Vector3(0, 0, 15), 0.3f).SetLoops(4, LoopType.Yoyo).OnComplete(() =>
               transform.position = startPos.position);
