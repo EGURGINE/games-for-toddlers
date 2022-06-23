@@ -21,5 +21,6 @@ public class Balloon : MonoBehaviour
     private void OnDestroy()
     {
         GameObject.Find("PlayManager").GetComponent<BalloonSpawner>().NotBalloon(1);
+        DOTween.Kill(transform);
     }
 }

@@ -11,7 +11,7 @@ public class PlayManager : MonoBehaviour
     [SerializeField] GameObject HomeBtn;
     public void Stage(int num)
     {
-        if (num == 5)
+        if (num == 3)
         {
             StageChecker.SetActive(false);
             HomeBtn.SetActive(true);
