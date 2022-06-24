@@ -22,7 +22,7 @@ public class BalloonSpawner : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             yield return new WaitForSeconds(Random.Range(0, 0.8f));
-            Instantiate(Balloon).transform.position = new Vector2(Random.Range(-8,8), -9);
+            Instantiate(Balloon).transform.position = new Vector2(Random.Range(-8.8f,8.8f), -9);
 
         }
     }

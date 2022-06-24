@@ -11,7 +11,7 @@ public class MatchingChoice : MonoBehaviour
     {
         if (gm.isThouching) return;
         gm.isThouching = true;
-        transform.DORotate(Vector3.zero, 0.2f).OnComplete(() => 
+        transform.DORotate(Vector3.zero, 0.5f).OnComplete(() => 
         {
             gm.AddCheck(gameObject);
             gm.isThouching = false;
@@ -20,6 +20,6 @@ public class MatchingChoice : MonoBehaviour
 
     public void False()
     {
-        transform.DORotate(new Vector3(0,180,0), 0.2f);
+        transform.DORotate(new Vector3(0,180,0), 0.5f);
     }
 }
