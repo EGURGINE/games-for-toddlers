@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using DG.Tweening;
 public class StageManager : MonoBehaviour
 {
     [SerializeField] private Slider exitSlider;
     [SerializeField] private GameObject pc;
     public void MainBtn(float value)
     {
-        if (value == 0) SceneManager.LoadScene("Main");
+        if (value == 0)
+        {
+            DOTween.KillAll();
+            SceneManager.LoadScene("Main");
+        }
         else exitSlider.value = 1;
     }
 

@@ -11,13 +11,11 @@ public class Title : MonoBehaviour
         title.rectTransform.DOLocalMoveY(200, 1).SetLoops(-1, LoopType.Yoyo);
     }
 
-    // Update is called once per frame
-    void Update()
+   
+    public void MainBtn()
     {
-        //if (Input.GetMouseButton(0))
-        //{
-        //    SceneManager.LoadScene("Main");
-        //}
+        DOTween.KillAll();
+        SceneManager.LoadScene("Main");
     }
     public void creditON()
     {

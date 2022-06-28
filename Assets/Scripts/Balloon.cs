@@ -16,11 +16,8 @@ public class Balloon : MonoBehaviour
     private void OnMouseDown()
     {
         Instantiate(pc).transform.position =  new Vector2(transform.position.x,transform.position.y+2.3f);
-        Destroy(gameObject);
-    }
-    private void OnDestroy()
-    {
         GameObject.Find("PlayManager").GetComponent<BalloonSpawner>().NotBalloon(1);
         DOTween.Kill(transform);
+        Destroy(gameObject);
     }
 }
