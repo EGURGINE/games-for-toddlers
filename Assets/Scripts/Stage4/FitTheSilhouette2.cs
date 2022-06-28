@@ -19,7 +19,7 @@ public class FitTheSilhouette2 : MonoBehaviour
             temp = sizeNum[ran_1];
             sizeNum[ran_1] = sizeNum[ran_2];
             sizeNum[ran_2] = temp;
-        }
+        }   
         for (int i = 0; i < 3; i++)
         {
             sizeNum[i].transform.position = new Vector2(pos[i].position.x, pos[i].position.y);

@@ -13,7 +13,7 @@ public class Map : MonoBehaviour
     }
     private void Update()
     {
-        if (transform.position.x<-21)
+        if (transform.position.x<-41)
         {
             Debug.Log("dd");
             transform.position = startPos.position;
