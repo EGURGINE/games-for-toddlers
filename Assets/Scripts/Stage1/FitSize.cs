@@ -4,14 +4,15 @@ using UnityEngine;
 using DG.Tweening;
 public class FitSize : MonoBehaviour
 {
-    [SerializeField] private GameObject[] choice;
+    public GameObject[] choice;
     [SerializeField] private GameObject[] sizeNum;
+    [SerializeField] private Sprite questionMark;
     [SerializeField] private Transform[] pos;
-    private int ran;
+    public int ran;
     private void Start()
     {
         ran = Random.Range(0, choice.Length);
-        choice[ran].GetComponent<SpriteRenderer>().enabled = false;
+        choice[ran].GetComponent<SpriteRenderer>().sprite = questionMark;
         choice[ran].AddComponent<BoxCollider2D>().isTrigger = true;
         choice[ran].tag = "True";
         sizeNum[ran].tag = "True";
@@ -46,7 +47,7 @@ public class FitSize : MonoBehaviour
     }
     public IEnumerator ClearDot(int num)
     {
-        choice[ran].GetComponent<SpriteRenderer>().enabled = true;
+        choice[ran].GetComponent<SpriteRenderer>().enabled = false;
 
         for (int i = 0; i < choice.Length; i++)
         {

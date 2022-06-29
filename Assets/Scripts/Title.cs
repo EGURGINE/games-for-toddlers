@@ -4,14 +4,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Title : MonoBehaviour
 {
-    [SerializeField] private Image title;
+  
     [SerializeField] private GameObject credit;
-    void Start()
-    {
-        title.rectTransform.DOLocalMoveY(200, 1).SetLoops(-1, LoopType.Yoyo);
-    }
-
-   
     public void MainBtn()
     {
         DOTween.KillAll();

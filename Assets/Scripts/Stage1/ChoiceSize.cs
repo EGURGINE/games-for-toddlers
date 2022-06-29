@@ -21,6 +21,7 @@ public class ChoiceSize : MonoBehaviour
     {
         if (isTrue && isNot)
         {
+            GameObject.Find("StageManager").GetComponent<FitSize>().choice[GameObject.Find("StageManager").GetComponent<FitSize>().ran].GetComponent<SpriteRenderer>().enabled = false;
             transform.position = truePos.position;
             Instantiate(clearPc).transform.position = transform.position;
             transform.DOScale(new Vector3(transform.localScale.x + 0.1f, transform.localScale.y + 0.1f, 1), 0.5f).SetLoops(2, LoopType.Yoyo).OnComplete(() =>

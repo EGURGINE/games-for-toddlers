@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class FitTheSilhouette : MonoBehaviour
 {
+    [SerializeField] private GameObject[] choice;
     [SerializeField] private GameObject[] sizeNum;
     [SerializeField] private Transform[] pos;
     private void Start()
     {
-        for (int i = 0; i < 4; i++)
+        choice[Random.Range(0,choice.Length-1)].SetActive(true);
+        for (int i = 0; i < sizeNum.Length; i++)
         {
             int ran_1 = Random.Range(0, sizeNum.Length);
             int ran_2 = Random.Range(0, sizeNum.Length);
