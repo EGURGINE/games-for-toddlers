@@ -6,16 +6,21 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 public class StageManager : MonoBehaviour
 {
+    [SerializeField] private GameObject setWnd;
     [SerializeField] private Slider exitSlider;
     [SerializeField] private GameObject pc;
     public void MainBtn(float value)
     {
         if (value == 0)
         {
-            DOTween.KillAll();
-            SceneManager.LoadScene("Main");
+            setWnd.SetActive(true);
+            Invoke("ExitSliderControl", 0.5f);
         }
         else exitSlider.value = 1;
+    }
+    private void ExitSliderControl()
+    {
+        exitSlider.value = 1;
     }
 
     private void Update()
@@ -37,17 +42,17 @@ public class StageManager : MonoBehaviour
     }
     public void Game_4()
     {
-        if (PlayerPrefs.GetInt("MaxStageNum") < 4) return;
+        //if (PlayerPrefs.GetInt("MaxStageNum") < 4) return;
         SceneManager.LoadScene("4stage");
     }
     public void Game_5()
     {
-        if (PlayerPrefs.GetInt("MaxStageNum") < 5) return;
+       // if (PlayerPrefs.GetInt("MaxStageNum") < 5) return;
         SceneManager.LoadScene("5stage");
     }
     public void Game_6()
     {
-        if (PlayerPrefs.GetInt("MaxStageNum") < 6) return;
+       // if (PlayerPrefs.GetInt("MaxStageNum") < 6) return;
         SceneManager.LoadScene("6stage");
     }
 }

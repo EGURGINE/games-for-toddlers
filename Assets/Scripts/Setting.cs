@@ -19,46 +19,29 @@ public class Setting : MonoBehaviour
     }
 
     [SerializeField] GameObject settingWnd;
+    [SerializeField] Slider bgmS;
+    [SerializeField] Slider sfxS;
     [SerializeField] private AudioSource bgm;
     public float volume;
 
     private void Awake()
     {
-        float curSfx = 1;
-
-        if (PlayerPrefs.HasKey("Volume"))
-            curSfx = PlayerPrefs.GetFloat("Volume");
-
-        Debug.Log(curSfx);
-        bgm.volume = curSfx / 2;
-        volume = curSfx;
+        bgm.volume = PlayerPrefs.GetFloat("BgmVolume");
+        bgmS.value = bgm.volume;
+        volume = PlayerPrefs.GetFloat("Volume");
+        sfxS.value = volume;
     }
     
 
     public void SetMusicVolume(float setVolume)
     {
-        bgm.volume = setVolume / 2;
         volume = setVolume;
         PlayerPrefs.SetFloat("Volume", setVolume);
     }
 
-    public void InExitBtn()
+    public void SetBgmVolume(float setVolume)
     {
-        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
-        Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.Locked;
-        settingWnd.SetActive(false);
-    }
-    public void TitleExitBtn()
-    {
-        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
-        Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.None;
-        settingWnd.SetActive(false);
-    }
-
-    public void MainExitBtn()
-    {
-        SceneManager.LoadScene("Title");
+        bgm.volume = setVolume / 2;
+        PlayerPrefs.SetFloat("BgmVolume", setVolume);
     }
 }

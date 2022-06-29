@@ -3,9 +3,10 @@ using UnityEngine;
 
 public enum Sound_Effect
 {
-    BGM,
     BUTTON,
-    CLEAR
+    TRUE,
+    CLEAR,
+    BOOM
 }
 
 
