@@ -4,23 +4,34 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Title : MonoBehaviour
 {
-    [SerializeField] private GameObject setWnd;
     [SerializeField] private GameObject credit;
+    private int choice = 1;
+    [SerializeField] GameObject[] settingWnd;
     public void MainBtn()
     {
         DOTween.KillAll();
         SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
         SceneManager.LoadScene("Main");
     }
-    public void SettingWndOn()
+    public void LeftBtn()
     {
-        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
-        setWnd.SetActive(true);
+        if(choice == 0) choice = 2;
+        else choice--;
+        foreach (var item in settingWnd)
+        {
+            item.SetActive(false);
+        }
+        settingWnd[choice].SetActive(true);
     }
-    public void SettingWndOff()
+    public void RightBtn()
     {
-        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
-        setWnd.SetActive(false);
+        if (choice == 2) choice = 0;
+        else choice++;
+        foreach (var item in settingWnd)
+        {
+            item.SetActive(false);
+        }
+        settingWnd[choice].SetActive(true);
     }
     public void creditON()
     {
