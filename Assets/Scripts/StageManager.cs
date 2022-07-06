@@ -6,27 +6,14 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 public class StageManager : MonoBehaviour
 {
-    [SerializeField] private GameObject setWnd;
     [SerializeField] private Slider exitSlider;
-    [SerializeField] private GameObject pc;
     public void MainBtn(float value)
     {
         if (value == 0)
         {
-            setWnd.SetActive(true);
-            Invoke("ExitSliderControl", 0.5f);
+            SceneManager.LoadScene("Main");
         }
         else exitSlider.value = 1;
-    }
-    private void ExitSliderControl()
-    {
-        exitSlider.value = 1;
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButton(0)) Instantiate(pc).transform.position =
-                  Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
     }
     public void Game_1()
     {

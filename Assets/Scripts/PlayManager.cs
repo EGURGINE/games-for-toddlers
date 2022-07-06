@@ -21,10 +21,10 @@ public class PlayManager : MonoBehaviour
         }
         if (num != 0) Stages[num - 1].SetActive(false);
 
-        StageNumCheck[num].rectTransform.DOScale(new Vector2(0.3f, 0.3f), 0.2f).OnComplete(() =>
+        StageNumCheck[num-1].rectTransform.DOScale(new Vector2(0.3f, 0.3f), 0.2f).OnComplete(() =>
           {
-              StageNumCheck[num].rectTransform.DOScale(new Vector2(1f, 1f), 0.3f);
-              StageNumCheck[num].GetComponent<Image>().sprite = clearImage;
+              StageNumCheck[num-1].rectTransform.DOScale(new Vector2(1f, 1f), 0.3f);
+              StageNumCheck[num-1].GetComponent<Image>().sprite = clearImage;
           });
         Stages[num].SetActive(true);
     }

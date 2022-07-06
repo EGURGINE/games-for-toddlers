@@ -18,7 +18,6 @@ public class Setting : MonoBehaviour
         }
     }
 
-    [SerializeField] GameObject settingWnd;
     [SerializeField] Slider bgmS;
     [SerializeField] Slider sfxS;
     [SerializeField] private AudioSource bgm;

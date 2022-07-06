@@ -12,6 +12,7 @@ public class SilhouetteStage : MonoBehaviour
     [SerializeField] private Image[] StageNumCheck;
     [SerializeField] private Sprite clearImage;
     [SerializeField] GameObject HomeBtn;
+    [SerializeField] GameObject Player;
     private void Start()
     {
         StartCoroutine(NextStage(0));
@@ -20,6 +21,8 @@ public class SilhouetteStage : MonoBehaviour
     {
         if (num == 3)
         {
+            Player.GetComponent<Animator>().SetBool("isMove", true);
+            Player.transform.DOLocalMoveX(30, 8);
             StageChecker.SetActive(false);
             HomeBtn.SetActive(true);
             StartCoroutine(gameObject.GetComponent<BalloonSpawner>().Spawn());
@@ -28,10 +31,10 @@ public class SilhouetteStage : MonoBehaviour
         }
         if (num != 0) Stages[num - 1].SetActive(false);
 
-        StageNumCheck[num].rectTransform.DOScale(new Vector2(0.3f, 0.3f), 0.2f).OnComplete(() =>
+        StageNumCheck[num-1].rectTransform.DOScale(new Vector2(0.3f, 0.3f), 0.2f).OnComplete(() =>
         {
-            StageNumCheck[num].rectTransform.DOScale(new Vector2(1f, 1f), 0.3f);
-            StageNumCheck[num].GetComponent<Image>().sprite = clearImage;
+            StageNumCheck[num-1].rectTransform.DOScale(new Vector2(1f, 1f), 0.3f);
+            StageNumCheck[num-1].GetComponent<Image>().sprite = clearImage;
         });
         StartCoroutine(NextStage(num));
     }
@@ -39,11 +42,13 @@ public class SilhouetteStage : MonoBehaviour
     {
         foreach (var item in maps)
         {
+            Player.GetComponent<Animator>().SetBool("isMove", true);
             item.GetComponent<Map>().Play();
         }
         yield return new WaitForSeconds(2f);
         foreach (var item in maps)
         {
+            Player.GetComponent<Animator>().SetBool("isMove", false);
             item.GetComponent<Map>().Stop();
         }
         stages[_num].SetActive(true);

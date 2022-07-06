@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8297482864414897225}
   - component: {fileID: 4392989798654574}
   - component: {fileID: 7149395555250881587}
-  - component: {fileID: 3815845032774303074}
   m_Layer: 0
   m_Name: thouchParticle
   m_TagString: Untagged
@@ -4872,16 +4871,3 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &3815845032774303074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5844221740780450232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70086b364ef72094f8216eb6f7edc058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cnt: 0.5
