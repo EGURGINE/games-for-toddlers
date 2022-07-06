@@ -17,29 +17,40 @@ public class StageManager : MonoBehaviour
     }
     public void Game_1()
     {
-        SceneManager.LoadScene("1stage");
+        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
+        StartCoroutine(GoToStage(2));
     }
     public void Game_2()
     {
-        SceneManager.LoadScene("2stage");
+        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
+        StartCoroutine(GoToStage(3));
     }
     public void Game_3()
     {
-        SceneManager.LoadScene("3stage");
+        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
+        StartCoroutine(GoToStage(4));
     }
     public void Game_4()
     {
+        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
+        StartCoroutine(GoToStage(5));
         //if (PlayerPrefs.GetInt("MaxStageNum") < 4) return;
-        SceneManager.LoadScene("4stage");
     }
     public void Game_5()
     {
-       // if (PlayerPrefs.GetInt("MaxStageNum") < 5) return;
-        SceneManager.LoadScene("5stage");
+        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
+        StartCoroutine(GoToStage(6));
+        // if (PlayerPrefs.GetInt("MaxStageNum") < 5) return;
     }
     public void Game_6()
     {
-       // if (PlayerPrefs.GetInt("MaxStageNum") < 6) return;
-        SceneManager.LoadScene("6stage");
+        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
+        StartCoroutine(GoToStage(7));
+        // if (PlayerPrefs.GetInt("MaxStageNum") < 6) return;
+    }
+    private IEnumerator GoToStage(int _num)
+    {
+        yield return new WaitForSeconds(0.21f);
+        SceneManager.LoadScene(_num);
     }
 }

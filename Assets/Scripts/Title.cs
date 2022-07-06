@@ -11,11 +11,16 @@ public class Title : MonoBehaviour
     {
         DOTween.KillAll();
         SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
+        Invoke("GoMain", 0.21f);
+    }
+    private void GoMain()
+    {
         SceneManager.LoadScene("Main");
     }
     public void LeftBtn()
     {
-        if(choice == 0) choice = 2;
+        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
+        if (choice == 0) choice = 2;
         else choice--;
         foreach (var item in settingWnd)
         {
@@ -25,6 +30,7 @@ public class Title : MonoBehaviour
     }
     public void RightBtn()
     {
+        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
         if (choice == 2) choice = 0;
         else choice++;
         foreach (var item in settingWnd)
@@ -45,8 +51,12 @@ public class Title : MonoBehaviour
     }
     public void TitleBtn()
     {
-        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
         DOTween.KillAll();
+        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
+        Invoke("GoToTitle", 0.21f);
+    }
+    private void GoToTitle()
+    {
         SceneManager.LoadScene("Title");
     }
     public void StageSelectBtn()
